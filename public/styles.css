@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+/* Visible focus for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ff6b57;
+  outline-offset: 3px;
+}
+
+/* Skip link is hidden normally */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  z-index: 1000;
+}
+
+/* Skip link becomes visible when focused */
+.skip-link:focus-visible {
+  left: 10px;
+}

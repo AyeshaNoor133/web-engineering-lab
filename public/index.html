@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Web Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Task 1: Skip link -->
+  <a href="#main-content" class="skip-link">
+    Skip to main content
+  </a>
+
+  <!-- Task 1: Header -->
+  <header>
+    <h1 id="greeting">Welcome to My Page</h1>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="#main-content" aria-current="location">Home</a>
+        </li>
+
+        <li>
+          <a href="#office-hours">Office Hours</a>
+        </li>
+
+        <li>
+          <a href="#feedback">Send Feedback</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Task 2: Main content -->
+  <main id="main-content">
+
+    <!-- Task 3: Office Hours -->
+    <section id="office-hours">
+
+      <h2>Office Hours</h2>
+
+      <div class="office-hours-content">
+
+        <table>
+
+          <caption>
+            Office hours for the week
+          </caption>
+
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Opening Time</th>
+              <th scope="col">Closing Time</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <th scope="row">Monday</th>
+
+              <td>
+                <time datetime="09:00">9:00 AM</time>
+              </td>
+
+              <td>
+                <time datetime="17:00">5:00 PM</time>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Tuesday</th>
+
+              <td>
+                <time datetime="09:00">9:00 AM</time>
+              </td>
+
+              <td>
+                <time datetime="17:00">5:00 PM</time>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Wednesday</th>
+
+              <td>
+                <time datetime="09:00">9:00 AM</time>
+              </td>
+
+              <td>
+                <time datetime="17:00">5:00 PM</time>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Thursday</th>
+
+              <td>
+                <time datetime="09:00">9:00 AM</time>
+              </td>
+
+              <td>
+                <time datetime="17:00">5:00 PM</time>
+              </td>
+            </tr>
+
+            <tr>
+              <th scope="row">Friday</th>
+
+              <td>
+                <time datetime="09:00">9:00 AM</time>
+              </td>
+
+              <td>
+                <time datetime="17:00">5:00 PM</time>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <!-- Task 4: Informative SVG -->
+        <figure>
+
+          <svg
+            role="img"
+            aria-labelledby="office-icon-title"
+            viewBox="0 0 100 100"
+          >
+
+            <title id="office-icon-title">
+              Office hours clock
+            </title>
+
+            <circle
+              cx="50"
+              cy="50"
+              r="40"
+            ></circle>
+
+            <line
+              x1="50"
+              y1="50"
+              x2="50"
+              y2="25"
+            ></line>
+
+            <line
+              x1="50"
+              y1="50"
+              x2="70"
+              y2="60"
+            ></line>
+
+          </svg>
+
+          <figcaption>
+            Our weekly office hours
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- Task 4: Decorative SVG divider -->
+    <svg
+      class="section-divider"
+      aria-hidden="true"
+      viewBox="0 0 100 10"
+    >
+      <line
+        x1="0"
+        y1="5"
+        x2="100"
+        y2="5"
+      ></line>
+    </svg>
+
+
+    <!-- Task 5 & 6 & 7: Send Feedback -->
+    <section id="feedback">
+
+      <h2>Send Feedback</h2>
+
+      <form>
+
+        <!-- Name -->
+        <div>
+
+          <label for="name">
+            Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+          >
+
+        </div>
+
+
+        <!-- Email -->
+        <div>
+
+          <label for="email">
+            Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            aria-describedby="email-hint"
+            required
+          >
+
+          <small id="email-hint">
+            Please enter a valid email address.
+          </small>
+
+        </div>
+
+
+        <!-- Task 6: Topic radio group -->
+        <fieldset>
+
+          <legend>
+            Topic
+          </legend>
+
+          <div>
+
+            <input
+              type="radio"
+              id="general"
+              name="topic"
+              value="general"
+            >
+
+            <label for="general">
+              General Question
+            </label>
+
+          </div>
+
+
+          <div>
+
+            <input
+              type="radio"
+              id="feedback-topic"
+              name="topic"
+              value="feedback"
+            >
+
+            <label for="feedback-topic">
+              Feedback
+            </label>
+
+          </div>
+
+
+          <div>
+
+            <input
+              type="radio"
+              id="support"
+              name="topic"
+              value="support"
+            >
+
+            <label for="support">
+              Support
+            </label>
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- Message -->
+        <div>
+
+          <label for="message">
+            Message
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+          ></textarea>
+
+        </div>
+
+
+        <!-- Submit button -->
+        <button type="submit">
+          Send Feedback
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+
+  <!-- Task 2: Footer -->
+  <footer>
+
+    <address>
+
+      Contact:
+      <a href="mailto:example@email.com">
+        example@email.com
+      </a>
+
+    </address>
+
+  </footer>
+
+</body>
+
+</html>
